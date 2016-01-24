@@ -17,7 +17,7 @@ function randomBackground() {
 
 	header = $('.header');
 	//create an array that will hold the names of the backgrounds to choose from
-	backgrounds = ['rainy-floor','seattle','space-jupiter', 'office'];
+	backgrounds = ['rainy-floor','seattle','space-jupiter', 'office', 'water', 'laptop-notepad'];
 
 	//set min to 1 and max to the length of the backgrounds array
 	min = 0;
