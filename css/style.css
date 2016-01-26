@@ -124,6 +124,12 @@ hr.small {
 	position: relative;
 	width: 100%;
 	height: 100%;
+	color: #fff;
+	text-shadow:
+  -1px -1px 0 #333,
+  1px -1px 0 #333,
+  -1px 1px 0 #333,
+	1px 1px 0 #333;
 	background: url('../imgs/space-jupiter.jpg');
 	background-repeat: no-repeat;
 	background-position: center;
