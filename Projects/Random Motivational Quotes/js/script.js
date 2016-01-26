@@ -1,13 +1,15 @@
 //IIFE to wrap the entire script and to keep all vars local
 (function($, window, document) {
-
-	//grab the elements needed for the quotes
-	var quoteParagraph = $('#quote'),
-		nameParagraph = $('#name'),
+	"use strict";
+	var quoteParagraph = null,
+		nameParagraph = null,
 		//var used to make sure the next quote is not the same as the current one.
-		testForSame = null;
+		testForSame = null,
+		quoteHolder = [],
+		authorHolder = [];
 
-	var quoteHolder = [
+
+	quoteHolder = [
 		"Success is walking from failure to failure with no loss of enthusiasm.",
 		"Try not to become a person of success, but rather try to become a person of value.",
 		"A successful man is one who can lay a firm foundation with the bricks others have thrown at him.",
@@ -56,7 +58,7 @@
 		"Failure is only the opportunity to begin again. Only this time, more wisely."
 	];
 
-	var authorHolder = [
+	authorHolder = [
 		"Winston Churchill",
 		"Albert Einstein",
 		"David Brinkley",
@@ -105,25 +107,31 @@
 		"Uncle Iroh"
 	];
 
-	$(function() {
-		randomBackground();
-		//get a starting quote on load
+	//grab the elements needed for the quotes
+	quoteParagraph = $('#quote');
+	nameParagraph = $('#name');
+
+
+	//FUNCTION CALLS
+
+
+	//selects the random background for this instance
+	randomBackground();
+	//get a starting quote on load
+	quoteChooser();
+	//On click, change the quote to a new one.
+	$('button').click(function() {
 		quoteChooser();
-		//On click, change the quote to a new one.
-		$('button').click(function() {
-			quoteChooser();
-		});
 	});
 
 
 	function randomBackground() {
-		"use strict";
 		//Variable declarations
-		var body,
-			backgrounds,
-			min,
-			max,
-			chosen;
+		var body = null,
+			backgrounds = [],
+			min = null,
+			max = null,
+			chosen = null;
 
 		body = $('body');
 		//create an array that will hold the names of the backgrounds to choose from
@@ -134,7 +142,7 @@
 		max = backgrounds.length;
 
 		//Random number is generated
-		chosen = Math.floor(Math.random() * (max - min)) + min;
+		chosen = random(min, max);
 
 		//Background of the body element is changed depending on the result of the var chosen
 		body.css('background', 'url(imgs/' + backgrounds[chosen] + '.jpg)');
@@ -145,19 +153,19 @@
 	}
 
 	function quoteChooser() {
-		"use strict";
 		//variables for the random numnber generator
-		var min = 1;
-		var max = quoteHolder.length;
+		var min = null,
+			max = null,
+			chosen = null;
 
-		//random number generator
-		var random = Math.floor(Math.random() * (max - min + 1)) + min;
+		min = 0;
+		max = quoteHolder.length;
+		chosen = random(min, max);
 
 		//If the new quote is the same as the last, call the function again for a different number
-		if(random === testForSame) {
+		if (chosen === testForSame) {
 			quoteChooser();
-		}
-		else {
+		} else {
 			//Set the quote and author to the correct element of the arrays
 			quoteParagraph.text(quoteHolder[random]);
 			nameParagraph.text(authorHolder[random]);
@@ -166,4 +174,11 @@
 			testForSame = random;
 		}
 	}
+
+	//random number generator
+	function random(min, max) {
+		var holder = Math.floor(Math.random() * (max - min + 1)) + min;
+		return holder;
+	}
+
 }(window.jQuery, window, document));
