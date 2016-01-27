@@ -1,12 +1,12 @@
 //IIFE to wrap the entire script and to keep all vars local
 (function($, window, document) {
 	"use strict";
-	var quoteParagraph = null,
+	var quoteHolder = [],
+		authorHolder = [],
+		quoteParagraph = null,
 		nameParagraph = null,
 		//var used to make sure the next quote is not the same as the current one.
-		testForSame = null,
-		quoteHolder = [],
-		authorHolder = [];
+		testForSame = null;
 
 
 	quoteHolder = [
