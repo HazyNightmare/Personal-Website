@@ -1,0 +1,198 @@
+body {
+	background-color: #970b0e;
+	font-family: 'Lato', sans-serif;
+	/*This is used because of the fixed-top navigation
+    Do not delete.*/
+	padding-top: 70px;
+}
+
+/*************************
+ BOOTSTRAP NAVBAR OVERRIDE
+*************************/
+
+.navbar {
+	padding-top: 1em;
+	padding-bottom: 1em;
+	font-size: 1.35em;
+}
+.navbar-inverse .navbar-nav > li > a {
+	color: #bebebe;
+}
+.navbar-brand {
+	position: relative;
+	top: -2em;
+}
+.navbar-brand > img {
+	max-height: 5.35em;
+}
+.navbar-toggle {
+	margin-bottom: 1em;
+}
+
+/**************************
+BOOTSTRAP CAROUSEL OVERRIDE
+**************************/
+
+#left-arrow, #right-arrow {
+	position: absolute;
+	top: 50%;
+}
+.carousel-caption {
+	position: absolute;
+	right: 30%;
+	left: 30%;
+	bottom: 10%;
+	background-color: rgba(0, 0, 0, 0.35);
+	font-size: 2em;
+}
+.carousel-inner {
+	max-height: 720px;
+}
+.carousel-inner > #item-1 {
+	height: 720px;
+	background-image: url('../imgs/margaritas.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.carousel-inner > #item-2 {
+	height: 720px;
+	background-image: url('../imgs/bowl-of-peppers.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.carousel-inner > #item-3 {
+	height: 720px;
+	background-image: url('../imgs/map.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+/*********************************
+BOOTSTRAP CONTAINER-FLUID OVERRIDE
+*********************************/
+
+.container-fluid {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+
+/*************************
+DIFFERENT SECTIONS STYLING
+*************************/
+
+section {
+	border-bottom: #050505 medium solid;
+}
+#about-section, #menu-section, #catering-section, #contact-section {
+	padding-top: 4em;
+	padding-bottom: 5em;
+}
+#about-text h3, #menu-section h3, #catering-section h3, #contact-section h3 {
+	padding-top: 1em;
+}
+#about-text > blockquote {
+	color: #dddddd;
+	font-size: 1.5em;
+}
+#about-text > p {
+	color: #e3e3e3;
+	padding-top: 0.5em;
+	text-align: justify;
+	font-size: 1.5em;
+}
+#menu-text > p {
+	color: #e3e3e3;
+	padding-top: 0.5em;
+	text-align: center;
+	text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+	font-size: 1.5em;
+}
+#lunch-menu, #dinner-menu {
+	font-size: 2em;
+}
+#lunch-menu > a, #dinner-menu > a {
+	color: #e3e3e3;
+	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+#lunch-menu img, #dinner-menu img {
+	margin: 0 auto;
+}
+#catering-text > p {
+	color: #e3e3e3;
+	padding-top: 0.5em;
+	text-align: left;
+	font-size: 1.5em;
+}
+#contact-text > p {
+	color: #e3e3e3;
+	text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+	padding-top: 0.5em;
+	text-align: center;
+	font-size: 1.5em;
+}
+#contact-text > p > a {
+	color: #e3e3e3;
+	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+.black-section {
+	background-color: #151515;
+}
+.red-section {
+	background-color: #970b0e;
+}
+
+/***********
+SMALL THINGS
+***********/
+
+::selection {
+	background-color: red;
+}
+
+/*************
+@MEDIA QUERIES
+*************/
+
+@media screen and (max-width: 800px) {
+	.carousel-caption {
+		position: absolute;
+		padding-left: 0.5em;
+		padding-right: 0.5em;
+		right: 10%;
+		left: 10%;
+		bottom: 15%;
+	}
+	#about-text > p {
+		color: #e3e3e3;
+		padding-top: 0.5em;
+		padding-left: 0.5em;
+		padding-right: 0.5em;
+		text-align: left;
+		font-size: 1.25em;
+	}
+	#menu-text > p {
+		color: #e3e3e3;
+		padding-top: 0.5em;
+		text-align: center;
+		font-size: 1.25em;
+	}
+	#catering-text > p {
+		color: #e3e3e3;
+		padding-top: 0.5em;
+		padding-left: 0.5em;
+		padding-right: 0.5em;
+		text-align: left;
+		font-size: 1.25em;
+	}
+}
+@media screen and (max-width: 360px) {
+	.carousel-caption {
+		position: absolute;
+		right: 0%;
+		left: 0%;
+		bottom: 20%;
+	}
+}
