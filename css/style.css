@@ -16,11 +16,15 @@ body {
 	font-size: 4.5em;
 	font-weight: 700;
 }
-
+.text-vertical-center h3 {
+	font-size: 2em;
+	font-weight: 700;
+}
 /* Custom Button Styles */
 
 .btn-dark {
 	border-radius: 0;
+	font-weight: 700;
 	color: #fff;
 	background-color: rgba(0, 0, 0, 0.4);
 }
@@ -30,6 +34,7 @@ body {
 }
 .btn-light {
 	border-radius: 0;
+	font-weight: 700;
 	color: #333;
 	background-color: rgb(255, 255, 255);
 }
