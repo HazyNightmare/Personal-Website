@@ -1,87 +1,49 @@
 //IIFE to wrap the entire script and keep all vars local
-(function($, window, document) {
+var PAGECONTROLLER = (function($, window, document) {
 	"use strict";
 
-	/*************************
-	 ********DECLARATIONS*****
-	 *************************/
+	var object = {};
 
-	//Object to hold all of the different numbers and how they display on the clock
-	var clockController = {
-		twelveHour: true,
-		topLeft: function(num) {
-			$("#content > #holder-" + num + " > .number").find(".top-left").hide();
-		},
-		topBorder: function(num) {
-			$("#content > #holder-" + num + " > .number").find(".top-border").hide();
-		},
-		topRight: function(num) {
-			$("#content > #holder-" + num + " > .number").find(".top-right").hide();
-		},
-		middleBorder: function(num) {
-			$("#content > #holder-" + num + " > .number").find(".middle-border").hide();
-		},
-		bottomLeft: function(num) {
-			$("#content > #holder-" + num + " > .number").find(".bottom-left").hide();
-		},
-		bottomBorder: function(num) {
-			$("#content > #holder-" + num + " > .number").find(".bottom-border").hide();
-		},
-		bottomRight: function(num) {
-			$("#content > #holder-" + num + " > .number").find(".bottom-right").hide();
-		},
-		reset: function(num) {
-			$("#content > #holder-" + num + " > .number").find(".top-left").show();
-			$("#content > #holder-" + num + " > .number").find(".top-border").show();
-			$("#content > #holder-" + num + " > .number").find(".top-right").show();
-			$("#content > #holder-" + num + " > .number").find(".middle-border").show();
-			$("#content > #holder-" + num + " > .number").find(".bottom-left").show();
-			$("#content > #holder-" + num + " > .number").find(".bottom-border").show();
-			$("#content > #holder-" + num + " > .number").find(".bottom-right").show();
-		}
+	object.twelveHour = true;
+
+	object.init = function() {
+		startTime();
+		jquery();
 	};
 
+	return object;
 
-	/*************************
-	 ******JQUERY SECTION*****
-	 *************************/
+	function jquery() {
+		//If light-theme button is pressed, change the background
+		//and divs to white and black, respectively.
+		$('#light-theme').on('click', function() {
+			$('body').css("background-color", "white");
+			$('body').css("color", "black");
+			$('body').find('.triangle-up').css("border-bottom-color", "black");
+			$('body').find('.rectangle').css("background", "black");
+			$('body').find('.triangle-down').css("border-top-color", "black");
+		});
 
+		//If dark-theme button is pressed, change the background
+		//and divs to black and red, respectively.
+		$('#dark-theme').click(function() {
+			$('body').css("background-color", "black");
+			$('body').css("color", "red");
+			$('body').find('.triangle-up').css("border-bottom-color", "red");
+			$('body').find('.rectangle').css("background", "red");
+			$('body').find('.triangle-down').css("border-top-color", "red");
+		});
 
-	//If light-theme button is pressed, change the background
-	//and divs to white and black, respectively.
-	$('#light-theme').on('click', function() {
-		$('body').css("background-color", "white");
-		$('body').css("color", "black");
-		$('body').find('.triangle-up').css("border-bottom-color", "black");
-		$('body').find('.rectangle').css("background", "black");
-		$('body').find('.triangle-down').css("border-top-color", "black");
-	});
+		//If twelve-hour button is pressed, change twelveHour to true
+		$('#twelve-hour').on('click', function() {
+			object.twelveHour = true;
+		});
 
-	//If dark-theme button is pressed, change the background
-	//and divs to black and red, respectively.
-	$('#dark-theme').click(function() {
-		$('body').css("background-color", "black");
-		$('body').css("color", "red");
-		$('body').find('.triangle-up').css("border-bottom-color", "red");
-		$('body').find('.rectangle').css("background", "red");
-		$('body').find('.triangle-down').css("border-top-color", "red");
-	});
-
-	//If twelve-hour button is pressed, change twelveHour to true
-	$('#twelve-hour').on('click', function() {
-		clockController.twelveHour = true;
-	});
-
-	//If twenty-four-hour button is pressed, change twelveHour to false
-	$('#twenty-four-hour').click(function() {
-		clockController.twelveHour = false;
-	});
-
-
-	/*************************
-	 ********FUNCTIONS*********
-	 *************************/
-
+		//If twenty-four-hour button is pressed, change twelveHour to false
+		$('#twenty-four-hour').click(function() {
+			object.twelveHour = false;
+		});
+	}
 
 	function startTime() {
 		//Create a new Date object
@@ -95,7 +57,7 @@
 		m = checkTime(m);
 
 		//If twelveHour is true, call the function to change the hour to 12 hours
-		if (clockController.twelveHour === true) {
+		if (object.twelveHour === true) {
 			h = toTwelveHour(h);
 		}
 
@@ -103,7 +65,6 @@
 		setTimeout(startTime, 500);
 		setTimeout(clock(h, m), 500);
 	}
-	startTime();
 
 	function checkTime(input) {
 		if (input < 10) {
@@ -179,69 +140,110 @@
 	}
 
 
+	function topLeft(num) {
+		$("#content > #holder-" + num + " > .number").find(".top-left").hide();
+	}
+
+	function topBorder(num) {
+		$("#content > #holder-" + num + " > .number").find(".top-border").hide();
+	}
+
+	function topRight(num) {
+		$("#content > #holder-" + num + " > .number").find(".top-right").hide();
+	}
+
+	function middleBorder(num) {
+		$("#content > #holder-" + num + " > .number").find(".middle-border").hide();
+	}
+
+	function bottomLeft(num) {
+		$("#content > #holder-" + num + " > .number").find(".bottom-left").hide();
+	}
+
+	function bottomBorder(num) {
+		$("#content > #holder-" + num + " > .number").find(".bottom-border").hide();
+	}
+
+	function bottomRight(num) {
+		$("#content > #holder-" + num + " > .number").find(".bottom-right").hide();
+	}
+
+	function reset(num) {
+		$("#content > #holder-" + num + " > .number").find(".top-left").show();
+		$("#content > #holder-" + num + " > .number").find(".top-border").show();
+		$("#content > #holder-" + num + " > .number").find(".top-right").show();
+		$("#content > #holder-" + num + " > .number").find(".middle-border").show();
+		$("#content > #holder-" + num + " > .number").find(".bottom-left").show();
+		$("#content > #holder-" + num + " > .number").find(".bottom-border").show();
+		$("#content > #holder-" + num + " > .number").find(".bottom-right").show();
+	}
+
+
 	/*
 	    These are all fuctions that determine what each number looks like when active.
 	    The reset function is called at the beginning of every function to reset the number
 	    to eight, so the hidden properties are shown again.
 	*/
 	function zero(holderNum) {
-		clockController.reset(holderNum);
-		clockController.middleBorder(holderNum);
+		reset(holderNum);
+		middleBorder(holderNum);
 	}
 
 	function one(holderNum) {
-		clockController.reset(holderNum);
-		clockController.topLeft(holderNum);
-		clockController.topBorder(holderNum);
-		clockController.middleBorder(holderNum);
-		clockController.bottomLeft(holderNum);
-		clockController.bottomBorder(holderNum);
+		reset(holderNum);
+		topLeft(holderNum);
+		topBorder(holderNum);
+		middleBorder(holderNum);
+		bottomLeft(holderNum);
+		bottomBorder(holderNum);
 	}
 
 	function two(holderNum) {
-		clockController.reset(holderNum);
-		clockController.topLeft(holderNum);
-		clockController.bottomRight(holderNum);
+		reset(holderNum);
+		topLeft(holderNum);
+		bottomRight(holderNum);
 	}
 
 	function three(holderNum) {
-		clockController.reset(holderNum);
-		clockController.topLeft(holderNum);
-		clockController.bottomLeft(holderNum);
+		reset(holderNum);
+		topLeft(holderNum);
+		bottomLeft(holderNum);
 	}
 
 	function four(holderNum) {
-		clockController.reset(holderNum);
-		clockController.topBorder(holderNum);
-		clockController.bottomLeft(holderNum);
-		clockController.bottomBorder(holderNum);
+		reset(holderNum);
+		topBorder(holderNum);
+		bottomLeft(holderNum);
+		bottomBorder(holderNum);
 	}
 
 	function five(holderNum) {
-		clockController.reset(holderNum);
-		clockController.topRight(holderNum);
-		clockController.bottomLeft(holderNum);
+		reset(holderNum);
+		topRight(holderNum);
+		bottomLeft(holderNum);
 	}
 
 	function six(holderNum) {
-		clockController.reset(holderNum);
-		clockController.topRight(holderNum);
+		reset(holderNum);
+		topRight(holderNum);
 	}
 
 	function seven(holderNum) {
-		clockController.reset(holderNum);
-		clockController.topLeft(holderNum);
-		clockController.middleBorder(holderNum);
-		clockController.bottomLeft(holderNum);
-		clockController.bottomBorder(holderNum);
+		reset(holderNum);
+		topLeft(holderNum);
+		middleBorder(holderNum);
+		bottomLeft(holderNum);
+		bottomBorder(holderNum);
 	}
 
 	function eight(holderNum) {
-		clockController.reset(holderNum);
+		reset(holderNum);
 	}
 
 	function nine(holderNum) {
-		clockController.reset(holderNum);
-		clockController.bottomLeft(holderNum);
+		reset(holderNum);
+		bottomLeft(holderNum);
 	}
 }(window.jQuery, window, document));
+
+PAGECONTROLLER.init();
