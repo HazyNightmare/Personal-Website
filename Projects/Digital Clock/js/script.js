@@ -13,6 +13,9 @@ var PAGECONTROLLER = (function($, window, document) {
 
 	return object;
 
+	//Private functions
+
+	//function to hold all jquery on the page
 	function jquery() {
 		//If light-theme button is pressed, change the background
 		//and divs to white and black, respectively.
@@ -45,6 +48,7 @@ var PAGECONTROLLER = (function($, window, document) {
 		});
 	}
 
+	//Starts the clock
 	function startTime() {
 		//Create a new Date object
 		var today = new Date();
@@ -246,4 +250,5 @@ var PAGECONTROLLER = (function($, window, document) {
 	}
 }(window.jQuery, window, document));
 
+//Page initialization
 PAGECONTROLLER.init();
