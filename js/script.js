@@ -2,13 +2,22 @@
 var PAGECONTROLLER = (function($, window, document) {
 	"use strict";
 
+	//Object to grant access to methods in this function
 	var object = {};
 
+	//Method used to setup the basic funtions of the page
 	object.init = function() {
 		randomBackground();
 		scrollToSection();
 	};
 
+	//Method used to change the background to a new one
+	object.randomBackground = function() {
+		randomBackground();
+	};
+
+	//Return the object to get access to the methods from the console.
+	return object;
 
 	//private functions
 	function randomBackground() {
@@ -56,7 +65,7 @@ var PAGECONTROLLER = (function($, window, document) {
 		});
 	}
 
-	return object;
+
 }(window.jQuery, window, document));
 
 //Page initialization
