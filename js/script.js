@@ -1,24 +1,16 @@
 //IIFE to wrap the entire script and keep all vars local
-(function($, window, document) {
+var PAGECONTROLLER = (function($, window, document) {
 	"use strict";
 
-	/*************************
-	 *****FUNCTION CALLS*******
-	 *************************/
-	randomBackground();
-	scrollToSection();
+	var object = {};
+
+	object.init = function() {
+		randomBackground();
+		scrollToSection();
+	};
 
 
-	/*************************
-	 ******JQUERY SECTION******
-	 *************************/
-
-
-
-	/*************************
-	 ********FUNCTIONS*********
-	 *************************/
-
+	//private functions
 	function randomBackground() {
 		//Variable declarations
 		var header = null,
@@ -64,4 +56,8 @@
 		});
 	}
 
+	return object;
 }(window.jQuery, window, document));
+
+//Page initialization
+PAGECONTROLLER.init();
