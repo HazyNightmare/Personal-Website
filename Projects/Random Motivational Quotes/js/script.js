@@ -123,6 +123,14 @@ var PAGECONTROLLER = (function($, window, document) {
 		});
 	};
 
+	object.randomBackground = function() {
+		randomBackground();
+	};
+
+	object.quoteChooser = function() {
+		quoteChooser();
+	};
+
 	return object;
 
 
@@ -146,6 +154,10 @@ var PAGECONTROLLER = (function($, window, document) {
 		//Random number is generated
 		chosen = random(min, max);
 
+		if(typeof backgrounds[chosen] === 'undefined') {
+			return randomBackground();
+		}
+
 		//Background of the body element is changed depending on the result of the var chosen
 		body.css('background', 'url(imgs/' + backgrounds[chosen] + '.jpg)');
 		body.css('background-repeat', 'no-repeat');
@@ -166,8 +178,13 @@ var PAGECONTROLLER = (function($, window, document) {
 
 		//If the new quote is the same as the last, call the function again for a different number
 		if (chosen === testForSame) {
-			quoteChooser();
-		} else {
+			return quoteChooser();
+		}
+		//If the quote or author is undefined, call the function again
+		else if (typeof quoteHolder[chosen] === 'undefined' || typeof authorHolder === 'undefined') {
+			return quoteChooser();
+		}
+		 else {
 			//Set the quote and author to the correct element of the arrays
 			quoteParagraph.text(quoteHolder[chosen]);
 			nameParagraph.text("-- " + authorHolder[chosen]);
