@@ -1,6 +1,7 @@
 //IIFE to wrap the entire script and to keep all vars local
-(function($, window, document) {
+var PAGECONTROLLER = (function($, window, document) {
 	"use strict";
+
 	var quoteHolder = [],
 		authorHolder = [],
 		quoteParagraph = null,
@@ -8,8 +9,14 @@
 		//var used to make sure the next quote is not the same as the current one.
 		testForSame = null;
 
+	var object = {};
 
-	quoteHolder = [
+	object.init = function() {
+		randomBackground();
+		quoteChooser();
+	};
+
+	object.quoteHolder = [
 		"Success is walking from failure to failure with no loss of enthusiasm.",
 		"Try not to become a person of success, but rather try to become a person of value.",
 		"A successful man is one who can lay a firm foundation with the bricks others have thrown at him.",
@@ -58,54 +65,58 @@
 		"Failure is only the opportunity to begin again. Only this time, more wisely."
 	];
 
-	authorHolder = [
-		"Winston Churchill",
-		"Albert Einstein",
-		"David Brinkley",
-		"Winston Churchill",
-		"Thomas Jefferson",
-		"Pablo Picasso",
-		"Maya Angelou",
-		"Bruce Lee",
-		"Martin Luther King Jr.",
-		"Albert Einstein",
-		"Nickola Tesla",
-		"The Doctor",
-		"Doctor Who",
-		"The Doctor",
-		"The Doctor",
-		"Theodore Roosevelt",
-		"Audrey Hepburn",
-		"Maya Angelou",
-		"Yoda",
-		"Mark Twain",
-		"Vincent van Gogh",
-		"Vincent van Gogh",
-		"Anne Frank",
-		"John Lennon",
-		"Chinese Proverb",
-		"Unknown",
-		"Unknown",
-		"Steve Jobs",
-		"Paul Brandt",
-		"Thomas A. Edison",
-		"Theodore Roosevelt",
-		"Mahatmas Gandhi",
-		"Mr. Rogers",
-		"Unknown",
-		"The Wolf on Wall Street",
-		"Unknown",
-		"Unknown",
-		"Walt Whitman",
-		"Leonard Nimoy",
-		"Michael Dorn",
-		"Leonard Nimoy",
-		"Unknown",
-		"Unknown",
-		"C.S. Lewis",
-		"Michael J. Fox",
-		"Uncle Iroh"
-	];
+	object.authorHolder = [
+			"Winston Churchill",
+			"Albert Einstein",
+			"David Brinkley",
+			"Winston Churchill",
+			"Thomas Jefferson",
+			"Pablo Picasso",
+			"Maya Angelou",
+			"Bruce Lee",
+			"Martin Luther King Jr.",
+			"Albert Einstein",
+			"Nickola Tesla",
+			"The Doctor",
+			"Doctor Who",
+			"The Doctor",
+			"The Doctor",
+			"Theodore Roosevelt",
+			"Audrey Hepburn",
+			"Maya Angelou",
+			"Yoda",
+			"Mark Twain",
+			"Vincent van Gogh",
+			"Vincent van Gogh",
+			"Anne Frank",
+			"John Lennon",
+			"Chinese Proverb",
+			"Unknown",
+			"Unknown",
+			"Steve Jobs",
+			"Paul Brandt",
+			"Thomas A. Edison",
+			"Theodore Roosevelt",
+			"Mahatmas Gandhi",
+			"Mr. Rogers",
+			"Unknown",
+			"The Wolf on Wall Street",
+			"Unknown",
+			"Unknown",
+			"Walt Whitman",
+			"Leonard Nimoy",
+			"Michael Dorn",
+			"Leonard Nimoy",
+			"Unknown",
+			"Unknown",
+			"C.S. Lewis",
+			"Michael J. Fox",
+			"Uncle Iroh"
+		];
+
+
+	return object;
+
 
 	//grab the elements needed for the quotes
 	quoteParagraph = $('#quote');
@@ -167,11 +178,12 @@
 			quoteChooser();
 		} else {
 			//Set the quote and author to the correct element of the arrays
-			quoteParagraph.text(quoteHolder[random]);
-			nameParagraph.text(authorHolder[random]);
+			console.log(quoteHolder[chosen]);
+			quoteParagraph.text(quoteHolder[chosen]);
+			nameParagraph.text(authorHolder[chosen]);
 			//set the testForSame to the new quote to keep the next
 			//one from being the same
-			testForSame = random;
+			testForSame = chosen;
 		}
 	}
 
