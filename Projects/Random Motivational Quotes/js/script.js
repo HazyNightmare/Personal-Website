@@ -4,19 +4,12 @@ var PAGECONTROLLER = (function($, window, document) {
 
 	var quoteHolder = [],
 		authorHolder = [],
-		quoteParagraph = null,
-		nameParagraph = null,
+		quoteParagraph = $('#quote'),
+		nameParagraph = $('#name'),
 		//var used to make sure the next quote is not the same as the current one.
 		testForSame = null;
 
-	var object = {};
-
-	object.init = function() {
-		randomBackground();
-		quoteChooser();
-	};
-
-	object.quoteHolder = [
+	quoteHolder = [
 		"Success is walking from failure to failure with no loss of enthusiasm.",
 		"Try not to become a person of success, but rather try to become a person of value.",
 		"A successful man is one who can lay a firm foundation with the bricks others have thrown at him.",
@@ -65,90 +58,88 @@ var PAGECONTROLLER = (function($, window, document) {
 		"Failure is only the opportunity to begin again. Only this time, more wisely."
 	];
 
-	object.authorHolder = [
-			"Winston Churchill",
-			"Albert Einstein",
-			"David Brinkley",
-			"Winston Churchill",
-			"Thomas Jefferson",
-			"Pablo Picasso",
-			"Maya Angelou",
-			"Bruce Lee",
-			"Martin Luther King Jr.",
-			"Albert Einstein",
-			"Nickola Tesla",
-			"The Doctor",
-			"Doctor Who",
-			"The Doctor",
-			"The Doctor",
-			"Theodore Roosevelt",
-			"Audrey Hepburn",
-			"Maya Angelou",
-			"Yoda",
-			"Mark Twain",
-			"Vincent van Gogh",
-			"Vincent van Gogh",
-			"Anne Frank",
-			"John Lennon",
-			"Chinese Proverb",
-			"Unknown",
-			"Unknown",
-			"Steve Jobs",
-			"Paul Brandt",
-			"Thomas A. Edison",
-			"Theodore Roosevelt",
-			"Mahatmas Gandhi",
-			"Mr. Rogers",
-			"Unknown",
-			"The Wolf on Wall Street",
-			"Unknown",
-			"Unknown",
-			"Walt Whitman",
-			"Leonard Nimoy",
-			"Michael Dorn",
-			"Leonard Nimoy",
-			"Unknown",
-			"Unknown",
-			"C.S. Lewis",
-			"Michael J. Fox",
-			"Uncle Iroh"
-		];
+	authorHolder = [
+		"Winston Churchill",
+		"Albert Einstein",
+		"David Brinkley",
+		"Winston Churchill",
+		"Thomas Jefferson",
+		"Pablo Picasso",
+		"Maya Angelou",
+		"Bruce Lee",
+		"Martin Luther King Jr.",
+		"Albert Einstein",
+		"Nickola Tesla",
+		"The Doctor",
+		"Doctor Who",
+		"The Doctor",
+		"The Doctor",
+		"Theodore Roosevelt",
+		"Audrey Hepburn",
+		"Maya Angelou",
+		"Yoda",
+		"Mark Twain",
+		"Vincent van Gogh",
+		"Vincent van Gogh",
+		"Anne Frank",
+		"John Lennon",
+		"Chinese Proverb",
+		"Unknown",
+		"Unknown",
+		"Steve Jobs",
+		"Paul Brandt",
+		"Thomas A. Edison",
+		"Theodore Roosevelt",
+		"Mahatmas Gandhi",
+		"Mr. Rogers",
+		"Unknown",
+		"The Wolf on Wall Street",
+		"Unknown",
+		"Unknown",
+		"Walt Whitman",
+		"Leonard Nimoy",
+		"Michael Dorn",
+		"Leonard Nimoy",
+		"Unknown",
+		"Unknown",
+		"C.S. Lewis",
+		"Michael J. Fox",
+		"Uncle Iroh"
+	];
 
+
+	//used for access from the global scope
+	var object = {};
+
+	object.init = function() {
+		randomBackground();
+		quoteChooser();
+		object.jquery();
+	};
+
+	object.jquery = function() {
+		$('button').click(function() {
+			quoteChooser();
+		});
+	};
 
 	return object;
 
 
-	//grab the elements needed for the quotes
-	quoteParagraph = $('#quote');
-	nameParagraph = $('#name');
-
-
-	//FUNCTION CALLS
-
-
-	//selects the random background for this instance
-	randomBackground();
-	//get a starting quote on load
-	quoteChooser();
-	//On click, change the quote to a new one.
-	$('button').click(function() {
-		quoteChooser();
-	});
-
+	//Private functions
 
 	function randomBackground() {
 		//Variable declarations
-		var body = null,
+		var body = $('body'),
 			backgrounds = [],
 			min = null,
 			max = null,
 			chosen = null;
 
-		body = $('body');
 		//create an array that will hold the names of the backgrounds to choose from
 		backgrounds = ['autumn', 'beach-at-sunset', 'city-sunset', 'mossy-hills'];
 
-		//set min to 1 and max to the length of the backgrounds array
+		//set min to 0 and max to the length of the backgrounds array
 		min = 0;
 		max = backgrounds.length;
 
@@ -178,9 +169,8 @@ var PAGECONTROLLER = (function($, window, document) {
 			quoteChooser();
 		} else {
 			//Set the quote and author to the correct element of the arrays
-			console.log(quoteHolder[chosen]);
 			quoteParagraph.text(quoteHolder[chosen]);
-			nameParagraph.text(authorHolder[chosen]);
+			nameParagraph.text("-- " + authorHolder[chosen]);
 			//set the testForSame to the new quote to keep the next
 			//one from being the same
 			testForSame = chosen;
@@ -194,3 +184,6 @@ var PAGECONTROLLER = (function($, window, document) {
 	}
 
 }(window.jQuery, window, document));
+
+//Page initialization
+PAGECONTROLLER.init();
