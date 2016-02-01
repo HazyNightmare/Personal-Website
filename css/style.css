@@ -175,17 +175,17 @@ hr.small {
 	opacity: 0.8;
 }
 
-/* Call to Action */
-
-.call-to-action {
-	padding: 50px 0;
-}
-.call-to-action .btn {
-	margin: 10px;
-}
-
 /* Footer */
 
 footer {
-	padding: 100px 0;
+	padding: 75px 0;
+}
+footer a{
+	color: #fff;
+}
+footer #email:hover {
+	color: #fff;
+}
+footer a:hover {
+	color: rgba(0, 0, 0, 0.6);
 }
