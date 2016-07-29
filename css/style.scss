@@ -1,0 +1,337 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+@import url(https://fonts.googleapis.com/css?family=Roboto:500);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400);
+$backgroundColorDark: #1d2123;
+$backgroundColorLight: #f7f7f7;
+$color: white;
+$border: rgba(255, 255, 255, 0.2);
+$borderFocused: rgba(255, 255, 255, 0.6);
+$formHover: #0187c1;
+$formLight: lighten($formHover, 15%);
+
+body,
+html {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	font-family: "Open Sans", sans-serif;
+	font-weight: 400;
+	background-color: $backgroundColorDark;
+	color: $color;
+}
+
+h2 {
+	font-family: "Roboto", sans-serif;
+	font-weight: 500;
+}
+
+a {
+	color: rgba(0, 0, 0, 0.7);
+}
+
+a:active,
+a:focus,
+a:hover {
+	color: black;
+	text-decoration: none;
+}
+
+.btn,
+a {
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+	transition: all 0.30s ease-in-out;
+	font-family: "Raleway", sans-serif;
+}
+
+.bold {
+	font-weight: 600;
+}
+/* Custom Button Styles */
+.btn-dark {
+	border-radius: 0;
+	color: #fff;
+	background-color: rgba(0, 0, 0, 0.4);
+	border: 1px solid $border;
+}
+
+.btn-dark:active,
+.btn-dark:focus,
+.btn-dark:hover {
+	color: #fff;
+	background-color: rgba(0, 0, 0, 0.7);
+	border-color: $borderFocused;
+}
+
+.btn-light {
+	border-radius: 0;
+	color: #333;
+	background-color: rgb(255, 255, 255);
+}
+
+.btn-light:active,
+.btn-light:focus,
+.btn-light:hover {
+	color: #333;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+/* Custom Horizontal Rules */
+hr.small {
+	max-width: 150px;
+}
+
+hr.dark {
+	border-color: $backgroundColorDark;
+}
+/* Side Menu */
+#sidebar-wrapper {
+	z-index: 1000;
+	position: fixed;
+	left: 0;
+	width: 250px;
+	height: 100%;
+	margin-left: -250px;
+	overflow-y: auto;
+	background: #222;
+	-webkit-transition: all 0.4s ease 0s;
+	-moz-transition: all 0.4s ease 0s;
+	-ms-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
+}
+
+#sidebar-wrapper.active {
+	left: 250px;
+	width: 250px;
+}
+
+.sidebar-nav {
+	position: absolute;
+	top: 0;
+	width: 250px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	.sidebar-brand {
+		height: 55px;
+		font-size: 18px;
+		line-height: 55px;
+
+		a {
+			color: #999;
+		}
+
+		a:hover {
+			color: #fff;
+			background: none;
+		}
+	}
+}
+
+.sidebar-nav li {
+	text-indent: 20px;
+	line-height: 40px;
+
+	a {
+		font-size: 1.2em;
+		font-family: "Roboto", sans-serif;
+		font-weight: 500;
+		display: block;
+		text-decoration: none;
+		color: #999;
+	}
+
+	a:hover {
+		text-decoration: none;
+		color: #fff;
+		background: rgba(255, 255, 255, 0.2);
+	}
+
+	a:active,
+	a:focus {
+		text-decoration: none;
+	}
+}
+
+#menu-toggle {
+	z-index: 1;
+	position: fixed;
+	top: 0;
+	left: 0.5em;
+}
+
+.toggle {
+	margin: 5px 5px 0 0;
+}
+/* Header */
+.header {
+	display: table;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	text-shadow: -1px -1px 0 #333, 1px -1px 0 #333, -1px 1px 0 #333, 1px 1px 0 #333;
+	background-color: $backgroundColorDark;
+	background: url("../imgs/space-jupiter.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: scroll;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+}
+
+.text-vertical-center {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+
+	h1 {
+		margin: 0;
+		padding: 0;
+		font-size: 4.5em;
+		font-weight: 700;
+	}
+
+	h3 {
+		font-size: 2em;
+		font-weight: 700;
+	}
+}
+/* About */
+.about {
+	padding: 50px 0;
+	background: $backgroundColorLight;
+	color: black;
+}
+
+.profile-pic {
+	border: 0.5em solid rgba(0, 0, 0, 0.4);
+	border-radius: 50%;
+}
+
+.about-me {
+	font-size: 1.75em;
+	max-width: 950px;
+	margin: 0.25em auto;
+}
+/* Skills */
+.skills {
+	padding: 50px 0;
+	font-size: 1.5em;
+
+	.skills-item {
+		margin: 30px 0;
+
+		p {
+			font-size: 1.25em;
+			font-family: "Roboto", sans-serif;
+			font-weight: 500;
+		}
+	}
+
+	.skill-button {
+		margin: 0 0.35em;
+	}
+}
+/* Portfolio */
+.cool-stuff {
+	background-color: $backgroundColorLight;
+	color: black;
+	padding: 50px 0;
+	font-size: 1.25em;
+
+	.cool-stuff-item {
+		margin-bottom: 30px;
+	}
+
+	.img-cool-stuff {
+		margin: 0 auto;
+		padding: 2px;
+		border: 4px solid transparent;
+		border-radius: 0.1em;
+		-webkit-transition: all 0.4s ease 0s;
+		-moz-transition: all 0.4s ease 0s;
+		-ms-transition: all 0.4s ease 0s;
+		-o-transition: all 0.4s ease 0s;
+		transition: all 0.4s ease 0s;
+	}
+
+	.img-cool-stuff:hover {
+		border-color: black;
+	}
+}
+/* Footer */
+footer {
+	background-color: $backgroundColorDark;
+	padding: 75px 0 0;
+
+	a {
+		color: $color;
+	}
+
+	a:active,
+	a:focus,
+	a:hover {
+		color: rgba(255, 255, 255, 0.5);
+		text-decoration: none;
+	}
+
+	.form-control {
+		color: black;
+		font-family: "Raleway", sans-serif;
+		border: 1px solid #111;
+		font-size: 1.5em;
+	}
+
+	label {
+		font-size: 1.5em;
+	}
+
+	#reason-textarea,
+	input[type=email],
+	input[type=text] {
+		transition: border-color 0.30s ease-in-out;
+		resize: vertical;
+		outline: none !important;
+		padding: 3px 0 3px 3px;
+		margin: 5px 1px 3px 0;
+		border: 2px solid transparent;
+	}
+
+	#reason-textarea:hover,
+	input[type=email]:hover,
+	input[type=text]:hover {
+		box-shadow: 0 0 5px $formLight;
+		border: 2px solid $formHover;
+	}
+
+	#reason-textarea:focus,
+	input[type=email]:focus,
+	input[type=text]:focus {
+		box-shadow: 0 0 5px $formLight;
+		border: 2px solid $formLight;
+	}
+
+	#email:hover {
+		color: rgba(255, 255, 255, 0.5);
+	}
+
+	.text-contact {
+		padding: 2em 0 0;
+	}
+
+	.footer-copyright {
+		padding: 0 0 1em;
+	}
+}
+
+::selection {
+	background-color: $formLight;
+}
