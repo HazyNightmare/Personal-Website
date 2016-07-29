@@ -18,12 +18,9 @@ h2 {
 
 a {
   color: rgba(0, 0, 0, 0.7); }
-
-a:active,
-a:focus,
-a:hover {
-  text-decoration: none;
-  color: black; }
+  a:active, a:focus, a:hover {
+    text-decoration: none;
+    color: black; }
 
 .btn,
 a {
@@ -43,24 +40,18 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 0;
   background-color: rgba(0, 0, 0, 0.4); }
-
-.btn-dark:active,
-.btn-dark:focus,
-.btn-dark:hover {
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.6);
-  background-color: rgba(0, 0, 0, 0.7); }
+  .btn-dark:active, .btn-dark:focus, .btn-dark:hover {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(0, 0, 0, 0.7); }
 
 .btn-light {
   color: #333;
   border-radius: 0;
   background-color: white; }
-
-.btn-light:active,
-.btn-light:focus,
-.btn-light:hover {
-  color: #333;
-  background-color: rgba(255, 255, 255, 0.8); }
+  .btn-light:active, .btn-light:focus, .btn-light:hover {
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.8); }
 
 /* Custom Horizontal Rules */
 hr.small {
@@ -102,9 +93,9 @@ hr.dark {
     height: 55px; }
     .sidebar-nav .sidebar-brand a {
       color: #999; }
-    .sidebar-nav .sidebar-brand a:hover {
-      color: #fff;
-      background: none; }
+      .sidebar-nav .sidebar-brand a:hover {
+        color: #fff;
+        background: none; }
 
 .sidebar-nav li {
   line-height: 40px;
@@ -116,13 +107,12 @@ hr.dark {
     display: block;
     text-decoration: none;
     color: #999; }
-  .sidebar-nav li a:hover {
-    text-decoration: none;
-    color: #fff;
-    background: rgba(255, 255, 255, 0.2); }
-  .sidebar-nav li a:active,
-  .sidebar-nav li a:focus {
-    text-decoration: none; }
+    .sidebar-nav li a:hover {
+      text-decoration: none;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.2); }
+    .sidebar-nav li a:active, .sidebar-nav li a:focus {
+      text-decoration: none; }
 
 #menu-toggle {
   position: fixed;
@@ -219,6 +209,9 @@ footer {
   background-color: #1d2123; }
   footer a {
     color: white; }
+    footer a:active, footer a:focus, footer a:hover {
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.5); }
   footer a:active,
   footer a:focus,
   footer a:hover {
@@ -240,16 +233,16 @@ footer {
     transition: border-color 0.30s ease-in-out;
     border: 2px solid transparent;
     outline: none !important; }
-  footer #reason-textarea:hover,
-  footer input[type=email]:hover,
-  footer input[type=text]:hover {
-    border: 2px solid #0187c1;
-    box-shadow: 0 0 5px #11b6fe; }
-  footer #reason-textarea:focus,
-  footer input[type=email]:focus,
-  footer input[type=text]:focus {
-    border: 2px solid #11b6fe;
-    box-shadw: 0 0 5px #11b6fe; }
+    footer #reason-textarea:hover,
+    footer input[type=email]:hover,
+    footer input[type=text]:hover {
+      border: 2px solid #0187c1;
+      box-shadow: 0 0 5px #11b6fe; }
+    footer #reason-textarea:focus,
+    footer input[type=email]:focus,
+    footer input[type=text]:focus {
+      border: 2px solid #11b6fe;
+      box-shadw: 0 0 5px #11b6fe; }
   footer #email:hover {
     color: rgba(255, 255, 255, 0.5); }
   footer .text-contact {

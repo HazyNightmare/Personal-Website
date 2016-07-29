@@ -36,13 +36,12 @@ h2 {
 
 a {
 	color: rgba(0, 0, 0, .7);
-}
-
-a:active,
-a:focus,
-a:hover {
-	text-decoration: none;
-	color: black;
+	&:active,
+	&:focus,
+	&:hover {
+		text-decoration: none;
+		color: black;
+	}
 }
 
 .btn,
@@ -60,28 +59,27 @@ a {
 	border: 1px solid $border;
 	border-radius: 0;
 	background-color: rgba(0, 0, 0, .4);
-}
-
-.btn-dark:active,
-.btn-dark:focus,
-.btn-dark:hover {
-	color: #fff;
-	border-color: $borderFocused;
-	background-color: rgba(0, 0, 0, .7);
+	&:active,
+	&:focus,
+	&:hover {
+		color: #fff;
+		border-color: $borderFocused;
+		background-color: rgba(0, 0, 0, .7);
+	}
 }
 
 .btn-light {
 	color: #333;
 	border-radius: 0;
 	background-color: rgb(255, 255, 255);
+	&:active,
+	&:focus,
+	&:hover {
+		color: #333;
+		background-color: rgba(255, 255, 255, .8);
+	}
 }
 
-.btn-light:active,
-.btn-light:focus,
-.btn-light:hover {
-	color: #333;
-	background-color: rgba(255, 255, 255, .8);
-}
 /* Custom Horizontal Rules */
 hr.small {
 	max-width: 150px;
@@ -123,11 +121,10 @@ hr.dark {
 
 		a {
 			color: #999;
-		}
-
-		a:hover {
-			color: #fff;
-			background: none;
+			&:hover {
+				color: #fff;
+				background: none;
+			}
 		}
 	}
 }
@@ -143,17 +140,15 @@ hr.dark {
 		display: block;
 		text-decoration: none;
 		color: #999;
-	}
-
-	a:hover {
-		text-decoration: none;
-		color: #fff;
-		background: rgba(255, 255, 255, .2);
-	}
-
-	a:active,
-	a:focus {
-		text-decoration: none;
+		&:hover {
+			text-decoration: none;
+			color: #fff;
+			background: rgba(255, 255, 255, .2);
+		}
+		&:active,
+		&:focus {
+			text-decoration: none;
+		}
 	}
 }
 
@@ -269,6 +264,12 @@ footer {
 
 	a {
 		color: $color;
+		&:active,
+		&:focus,
+		&:hover {
+			text-decoration: none;
+			color: rgba(255, 255, 255, .5);
+		}
 	}
 
 	a:active,
@@ -298,20 +299,14 @@ footer {
 		transition: border-color 0.30s ease-in-out;
 		border: 2px solid transparent;
 		outline: none !important;
-	}
-
-	#reason-textarea:hover,
-	input[type=email]:hover,
-	input[type=text]:hover {
-		border: 2px solid $formHover;
-		box-shadow: 0 0 5px $formLight;
-	}
-
-	#reason-textarea:focus,
-	input[type=email]:focus,
-	input[type=text]:focus {
-		border: 2px solid $formLight;
-		box-shadw: 0 0 5px $formLight;
+		&:hover {
+			border: 2px solid $formHover;
+			box-shadow: 0 0 5px $formLight;
+		}
+		&:focus {
+			border: 2px solid $formLight;
+			box-shadw: 0 0 5px $formLight;
+		}
 	}
 
 	#email:hover {
