@@ -4,10 +4,17 @@
 $backgroundColorDark: #1d2123;
 $backgroundColorLight: #f7f7f7;
 $color: white;
-$border: rgba(255, 255, 255, 0.2);
-$borderFocused: rgba(255, 255, 255, 0.6);
+$border: rgba(255, 255, 255, .2);
+$borderFocused: rgba(255, 255, 255, .6);
 $formHover: #0187c1;
 $formLight: lighten($formHover, 15%);
+@mixin transitions($speed, $timing: ease-in-out) {
+	-webkit-transition: all $speed $timing;
+	-moz-transition: all $speed $timing;
+	-ms-transition: all $speed $timing;
+	-o-transition: all $speed $timing;
+	transition: all $speed $timing;
+}
 
 body,
 html {
@@ -18,8 +25,8 @@ html {
 body {
 	font-family: "Open Sans", sans-serif;
 	font-weight: 400;
-	background-color: $backgroundColorDark;
 	color: $color;
+	background-color: $backgroundColorDark;
 }
 
 h2 {
@@ -28,24 +35,20 @@ h2 {
 }
 
 a {
-	color: rgba(0, 0, 0, 0.7);
+	color: rgba(0, 0, 0, .7);
 }
 
 a:active,
 a:focus,
 a:hover {
-	color: black;
 	text-decoration: none;
+	color: black;
 }
 
 .btn,
 a {
-	-webkit-transition: all 0.30s ease-in-out;
-	-moz-transition: all 0.30s ease-in-out;
-	-ms-transition: all 0.30s ease-in-out;
-	-o-transition: all 0.30s ease-in-out;
-	transition: all 0.30s ease-in-out;
 	font-family: "Raleway", sans-serif;
+	@include transitions(.30s);
 }
 
 .bold {
@@ -53,23 +56,23 @@ a {
 }
 /* Custom Button Styles */
 .btn-dark {
-	border-radius: 0;
 	color: #fff;
-	background-color: rgba(0, 0, 0, 0.4);
 	border: 1px solid $border;
+	border-radius: 0;
+	background-color: rgba(0, 0, 0, .4);
 }
 
 .btn-dark:active,
 .btn-dark:focus,
 .btn-dark:hover {
 	color: #fff;
-	background-color: rgba(0, 0, 0, 0.7);
 	border-color: $borderFocused;
+	background-color: rgba(0, 0, 0, .7);
 }
 
 .btn-light {
-	border-radius: 0;
 	color: #333;
+	border-radius: 0;
 	background-color: rgb(255, 255, 255);
 }
 
@@ -77,7 +80,7 @@ a {
 .btn-light:focus,
 .btn-light:hover {
 	color: #333;
-	background-color: rgba(255, 255, 255, 0.8);
+	background-color: rgba(255, 255, 255, .8);
 }
 /* Custom Horizontal Rules */
 hr.small {
@@ -89,19 +92,15 @@ hr.dark {
 }
 /* Side Menu */
 #sidebar-wrapper {
-	z-index: 1000;
 	position: fixed;
+	z-index: 1000;
 	left: 0;
+	overflow-y: auto;
 	width: 250px;
 	height: 100%;
 	margin-left: -250px;
-	overflow-y: auto;
 	background: #222;
-	-webkit-transition: all 0.4s ease 0s;
-	-moz-transition: all 0.4s ease 0s;
-	-ms-transition: all 0.4s ease 0s;
-	-o-transition: all 0.4s ease 0s;
-	transition: all 0.4s ease 0s;
+	@include transitions(.4s, ease);
 }
 
 #sidebar-wrapper.active {
@@ -118,9 +117,9 @@ hr.dark {
 	list-style: none;
 
 	.sidebar-brand {
-		height: 55px;
 		font-size: 18px;
 		line-height: 55px;
+		height: 55px;
 
 		a {
 			color: #999;
@@ -134,12 +133,12 @@ hr.dark {
 }
 
 .sidebar-nav li {
-	text-indent: 20px;
 	line-height: 40px;
+	text-indent: 20px;
 
 	a {
-		font-size: 1.2em;
 		font-family: "Roboto", sans-serif;
+		font-size: 1.2em;
 		font-weight: 500;
 		display: block;
 		text-decoration: none;
@@ -149,7 +148,7 @@ hr.dark {
 	a:hover {
 		text-decoration: none;
 		color: #fff;
-		background: rgba(255, 255, 255, 0.2);
+		background: rgba(255, 255, 255, .2);
 	}
 
 	a:active,
@@ -159,8 +158,8 @@ hr.dark {
 }
 
 #menu-toggle {
-	z-index: 1;
 	position: fixed;
+	z-index: 1;
 	top: 0;
 	left: 0.5em;
 }
@@ -170,21 +169,21 @@ hr.dark {
 }
 /* Header */
 .header {
-	display: table;
 	position: relative;
+	display: table;
 	width: 100%;
 	height: 100%;
 	color: #fff;
-	text-shadow: -1px -1px 0 #333, 1px -1px 0 #333, -1px 1px 0 #333, 1px 1px 0 #333;
-	background-color: $backgroundColorDark;
 	background: url("../imgs/space-jupiter.jpg");
+	background-color: $backgroundColorDark;
 	background-repeat: no-repeat;
-	background-position: center;
 	background-attachment: scroll;
+	background-position: center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
-	background-size: cover;
 	-o-background-size: cover;
+	background-size: cover;
+	text-shadow: -1px -1px 0 #333, 1px -1px 0 #333, -1px 1px 0 #333, 1px 1px 0 #333;
 }
 
 .text-vertical-center {
@@ -193,10 +192,10 @@ hr.dark {
 	vertical-align: middle;
 
 	h1 {
-		margin: 0;
-		padding: 0;
 		font-size: 4.5em;
 		font-weight: 700;
+		margin: 0;
+		padding: 0;
 	}
 
 	h3 {
@@ -207,12 +206,12 @@ hr.dark {
 /* About */
 .about {
 	padding: 50px 0;
-	background: $backgroundColorLight;
 	color: black;
+	background: $backgroundColorLight;
 }
 
 .profile-pic {
-	border: 0.5em solid rgba(0, 0, 0, 0.4);
+	border: 0.5em solid rgba(0, 0, 0, .4);
 	border-radius: 50%;
 }
 
@@ -223,15 +222,15 @@ hr.dark {
 }
 /* Skills */
 .skills {
-	padding: 50px 0;
 	font-size: 1.5em;
+	padding: 50px 0;
 
 	.skills-item {
 		margin: 30px 0;
 
 		p {
-			font-size: 1.25em;
 			font-family: "Roboto", sans-serif;
+			font-size: 1.25em;
 			font-weight: 500;
 		}
 	}
@@ -242,25 +241,21 @@ hr.dark {
 }
 /* Portfolio */
 .cool-stuff {
-	background-color: $backgroundColorLight;
-	color: black;
-	padding: 50px 0;
 	font-size: 1.25em;
+	padding: 50px 0;
+	color: black;
+	background-color: $backgroundColorLight;
 
 	.cool-stuff-item {
 		margin-bottom: 30px;
 	}
 
 	.img-cool-stuff {
+		@include transitions(.4s, ease);
 		margin: 0 auto;
 		padding: 2px;
 		border: 4px solid transparent;
 		border-radius: 0.1em;
-		-webkit-transition: all 0.4s ease 0s;
-		-moz-transition: all 0.4s ease 0s;
-		-ms-transition: all 0.4s ease 0s;
-		-o-transition: all 0.4s ease 0s;
-		transition: all 0.4s ease 0s;
 	}
 
 	.img-cool-stuff:hover {
@@ -269,8 +264,8 @@ hr.dark {
 }
 /* Footer */
 footer {
-	background-color: $backgroundColorDark;
 	padding: 75px 0 0;
+	background-color: $backgroundColorDark;
 
 	a {
 		color: $color;
@@ -279,15 +274,15 @@ footer {
 	a:active,
 	a:focus,
 	a:hover {
-		color: rgba(255, 255, 255, 0.5);
 		text-decoration: none;
+		color: rgba(255, 255, 255, .5);
 	}
 
 	.form-control {
-		color: black;
 		font-family: "Raleway", sans-serif;
-		border: 1px solid #111;
 		font-size: 1.5em;
+		color: black;
+		border: 1px solid #111;
 	}
 
 	label {
@@ -297,30 +292,30 @@ footer {
 	#reason-textarea,
 	input[type=email],
 	input[type=text] {
-		transition: border-color 0.30s ease-in-out;
-		resize: vertical;
-		outline: none !important;
-		padding: 3px 0 3px 3px;
 		margin: 5px 1px 3px 0;
+		padding: 3px 0 3px 3px;
+		resize: vertical;
+		transition: border-color 0.30s ease-in-out;
 		border: 2px solid transparent;
+		outline: none !important;
 	}
 
 	#reason-textarea:hover,
 	input[type=email]:hover,
 	input[type=text]:hover {
-		box-shadow: 0 0 5px $formLight;
 		border: 2px solid $formHover;
+		box-shadow: 0 0 5px $formLight;
 	}
 
 	#reason-textarea:focus,
 	input[type=email]:focus,
 	input[type=text]:focus {
-		box-shadow: 0 0 5px $formLight;
 		border: 2px solid $formLight;
+		box-shadw: 0 0 5px $formLight;
 	}
 
 	#email:hover {
-		color: rgba(255, 255, 255, 0.5);
+		color: rgba(255, 255, 255, .5);
 	}
 
 	.text-contact {
