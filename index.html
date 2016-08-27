@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -7,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Zachary Surgett: freelance web developer.">
-	<meta name="keywords" content="HTML, CSS, JavaScript, web development, programming, programming portfolio, portfolio, making websites">
+	<meta name="keywords" content="HTML, CSS, JavaScript, web development, web, developer, development, software, programming, programming portfolio, portfolio, making websites">
 	<meta name="author" content="Zachary Surgett">
 
 	<meta name="google-site-verification" content="Mo7_hZUztdbvwL3Umz28h-EXGkjvrBaKBVVlDAiovf8" />
@@ -55,7 +55,7 @@
 	</a>
 	<nav id="sidebar-wrapper">
 		<ul class="sidebar-nav">
-			<a href="" id="menu-close" class="btn btn-light btn-lg pull-right toggle">
+			<a href="" id="menu-close" class="btn btn-menu btn-lg pull-right toggle">
 				<i class="fa fa-times"></i>
 			</a>
 			<li class="sidebar-brand">
@@ -68,20 +68,26 @@
 				<a href="#about" onclick="$('#menu-close').click();">About</a>
 			</li>
 			<li>
-				<a href="#skills" onclick="$('#menu-close').click();">Skills</a>
+				<a href="#work" onclick="$('#menu-close').click();">My Work</a>
 			</li>
 			<li>
-				<a href="#cool-stuff" onclick="$('#menu-close').click();">Cool Stuff</a>
+				<a href="http://www.zacharysurgett.com/blog/">Blog</a>
+			</li>
+			<li>
+				<a href="files/Zachary Surgett-Resume.pdf" target="_blank">Resume</a>
 			</li>
 			<li>
 				<a href="#contact" onclick="$('#menu-close').click();">Contact</a>
 			</li>
 			<hr>
 			<li>
-				<a href="http://www.zacharysurgett.com/blog/">Blog</a>
+				<i class="fa fa-twitter fa-fw"></i> @ZachSurgett
 			</li>
 			<li>
-				<a href="files/Zachary Surgett - Resume.pdf" target="_blank" onclick="$('#menu-close').click();">Resume</a>
+				<i class="fa fa-phone fa-fw"></i> (575) 635-9669
+			</li>
+			<li>
+				<i class="fa fa-envelope-o fa-fw"></i> ZSurgett@gmail.com
 			</li>
 		</ul>
 	</nav>
@@ -92,7 +98,7 @@
 			<h1>Zachary Surgett</h1>
 			<h3>Front End Web Developer</h3>
 			<br>
-			<a href="#about" class="btn btn-dark btn-lg find-out-more">Find Out More</a>
+			<a href="#work" class="btn btn-dark btn-lg">Some of my work</a>
 		</div>
 	</header>
 
@@ -102,7 +108,7 @@
 			<div class="row">
 				<div class="col-xs-12 text-center">
 					<h2>About Me</h2>
-					<hr class="small dark">
+					<hr class="small">
 				</div>
 			</div>
 			<div class="row">
@@ -139,59 +145,8 @@
 		<!--/.container-->
 	</section>
 
-	<!--Services-->
-	<section id="skills" class="skills">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12 text-center">
-					<h2>My Skills</h2>
-					<hr class="small">
-				</div>
-			</div>
-			<div class="row text-center">
-				<div class="skills-item col-md-2 col-sm-4 col-xs-6">
-					<img class="skills-img img-responsive" src="imgs/html5.png" alt="">
-					<br>
-					<p>HTML5</p>
-				</div>
-				<div class="skills-item col-md-2 col-sm-4 col-xs-6">
-					<img class="skills-img img-responsive" src="imgs/css3.png" alt="">
-					<br>
-					<p>CSS3</p>
-				</div>
-				<div class="skills-item col-md-2 col-sm-4 col-xs-6">
-					<img class="skills-img img-responsive" src="imgs/js.png" alt="">
-					<br>
-					<p>JavaScript</p>
-				</div>
-				<div class="skills-item col-md-2 col-sm-4 col-xs-6">
-					<img class="skills-img img-responsive" src="imgs/sass.png" alt="">
-					<br>
-					<p>Sass</p>
-				</div>
-				<div class="skills-item col-md-2 col-sm-4 col-xs-6">
-					<img class="skills-img img-responsive" src="imgs/vs.png" alt="">
-					<br>
-					<p>C# &amp; Visual Studio</p>
-				</div>
-				<div class="skills-item col-md-2 col-sm-4 col-xs-6">
-					<img class="skills-img img-responsive" src="imgs/atom.png" alt="">
-					<br>
-					<p>Atom Text Editor</p>
-				</div>
-			</div>
-			<div class="row text-center">
-				<!-- TODO: ADD CORRECT LINKS -->
-				<a href="files/Zachary Surgett-Resume.pdf" target="_blank" class="btn btn-dark btn-lg skill-button">Resume</a>
-				<!-- <a href="#" class="btn btn-dark btn-lg skill-button">Portfolio</a> -->
-				<a href="https://github.com/hazynightmare" target="_blank" class="btn btn-dark btn-lg skill-button">Github Profile</a>
-			</div>
-		</div>
-		<!-- /.container -->
-	</section>
-
 	<!--Portfolio-->
-	<section id="cool-stuff" class="cool-stuff">
+	<section id="work" class="work">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-10 col-lg-offset-1 text-center">
@@ -199,9 +154,9 @@
 					<hr class="small">
 					<div class="row">
 						<div class="col-xs-6">
-							<div class="cool-stuff-item">
+							<div class="work-item">
 								<a href="projects/Word Clock/index.html">
-									<img src="imgs/Word-Clock.jpg" alt class="img-cool-stuff img-responsive">
+									<img src="imgs/Word-Clock.jpg" alt class="img-work img-responsive">
 								</a>
 								<a href="projects/Word Clock/index.html">
 									<h2>Word Clock</h2>
@@ -212,9 +167,9 @@
 							</div>
 						</div>
 						<div class="col-xs-6">
-							<div class="cool-stuff-item">
+							<div class="work-item">
 								<a href="projects/Random Motivational Quotes/index.html">
-									<img src="imgs/Random-Quotes.jpg" alt class="img-cool-stuff img-responsive">
+									<img src="imgs/Random-Quotes.jpg" alt class="img-work img-responsive">
 								</a>
 								<a href="projects/Random Motivational Quotes/index.html">
 									<h2>Motivational Quote Generator</h2>
@@ -225,9 +180,9 @@
 							</div>
 						</div>
 						<div class="col-xs-6">
-							<div class="cool-stuff-item">
+							<div class="work-item">
 								<a href="projects/Star Wars Text Crawl/index.html">
-									<img src="imgs/StarWars-Text.jpg" alt class="img-cool-stuff img-responsive">
+									<img src="imgs/StarWars-Text.jpg" alt class="img-work img-responsive">
 								</a>
 								<a href="projects/Star Wars Text Crawl/index.html">
 									<h2>Star Wars Text Crawl</h2>
@@ -238,9 +193,9 @@
 							</div>
 						</div>
 						<div class="col-xs-6">
-							<div class="cool-stuff-item">
+							<div class="work-item">
 								<a href="http://www.mezclan.com">
-									<img src="imgs/mez-clan.jpg" alt class="img-cool-stuff img-responsive">
+									<img src="imgs/mez-clan.jpg" alt class="img-work img-responsive">
 								</a>
 								<a href="http://www.mezclan.com">
 									<h2>MeZ Website</h2>
