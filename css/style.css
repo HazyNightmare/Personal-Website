@@ -1,145 +1,185 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway);
-@import url(https://fonts.googleapis.com/css?family=Roboto:500);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400);
 body,
 html {
   width: 100%;
   height: 100%; }
 
 body {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 400;
-  color: white;
-  background-color: #1d2123; }
-
-h2 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 500; }
+  font-family: sans-serif;
+  color: #ffffff;
+  background-color: #343434; }
 
 a {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   color: rgba(0, 0, 0, 0.7); }
   a:active, a:focus, a:hover {
-    text-decoration: none;
-    color: black; }
+    color: black;
+    text-decoration: none; }
 
-.btn,
-a {
-  font-family: "Raleway", sans-serif;
+footer {
+  padding: 50px 0 0; }
+  footer a {
+    color: #ffffff; }
+    footer a:active, footer a:focus, footer a:hover {
+      color: #99cd4e;
+      text-decoration: none; }
+  footer label {
+    font-size: 1.5em; }
+  footer .footer-copyright {
+    padding: 0 0 1em; }
+  footer .form-control {
+    color: black;
+    border: 1px solid #111;
+    font-family: sans-serif;
+    font-size: 1.5em; }
+  footer .text-contact {
+    padding: 2em 0 0; }
+  footer #reason-textarea,
+  footer input[type=email],
+  footer input[type=text] {
+    border: 2px solid transparent;
+    margin: 5px 1px 3px 0;
+    outline: none !important;
+    padding: 3px 0 3px 3px;
+    resize: vertical;
+    transition: border-color 0.30s ease-in-out; }
+    footer #reason-textarea:hover,
+    footer input[type=email]:hover,
+    footer input[type=text]:hover {
+      border: 2px solid #99cd4e; }
+    footer #reason-textarea:focus,
+    footer input[type=email]:focus,
+    footer input[type=text]:focus {
+      border: 2px solid #99cd4e;
+      box-shadw: 0 0 5px #99cd4e; }
+
+hr {
+  border-top: 1px solid #99cd4e; }
+  hr.small {
+    width: 250px; }
+
+section {
+  padding: 50px 0; }
+  section:nth-child(odd) {
+    background-color: #ffffff;
+    color: #343434; }
+
+#menu-toggle {
+  left: 0.5em;
+  position: fixed;
+  top: 0;
+  z-index: 1; }
+
+#sidebar-wrapper {
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  background: #222;
+  height: 100%;
+  left: 0;
+  margin-left: -250px;
+  overflow-y: auto;
+  position: fixed;
+  width: 250px;
+  z-index: 1000; }
+
+#sidebar-wrapper.active {
+  left: 250px;
+  width: 250px; }
+
+.about-me {
+  font-size: 1.75em;
+  margin: 0.25em auto;
+  max-width: 950px; }
+
+.bold {
+  font-weight: 600; }
+
+.btn {
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out; }
 
-.bold {
-  font-weight: 600; }
-
-/* Custom Button Styles */
 .btn-dark {
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid #343434;
   border-radius: 0;
-  background-color: rgba(0, 0, 0, 0.4); }
+  color: #ffffff; }
   .btn-dark:active, .btn-dark:focus, .btn-dark:hover {
-    color: #fff;
-    border-color: rgba(255, 255, 255, 0.6);
-    background-color: rgba(0, 0, 0, 0.7); }
+    background-color: rgba(0, 0, 0, 0.7);
+    border-color: #e1e1e1;
+    color: #ffffff; }
 
-.btn-light {
-  color: #333;
+.btn-menu {
+  background-color: #e1e1e1;
+  border: 1px solid #343434;
   border-radius: 0;
-  background-color: white; }
-  .btn-light:active, .btn-light:focus, .btn-light:hover {
-    color: #333;
-    background-color: rgba(255, 255, 255, 0.8); }
+  color: #343434; }
+  .btn-menu:active, .btn-menu:focus, .btn-menu:hover {
+    border: 1px solid #e1e1e1; }
 
-/* Custom Horizontal Rules */
-hr.small {
-  max-width: 150px; }
-
-hr.dark {
-  border-color: #1d2123; }
-
-/* Side Menu */
-#sidebar-wrapper {
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  overflow-y: auto;
-  width: 250px;
+.header {
+  background: url("../imgs/space-jupiter.jpg");
+  background-attachment: scroll;
+  background-color: #343434;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: #fff;
+  display: table;
   height: 100%;
-  margin-left: -250px;
-  background: #222;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  -ms-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
-  transition: all 0.4s ease; }
+  position: relative;
+  text-shadow: -1px -1px 0 #333, 1px -1px 0 #333, -1px 1px 0 #333, 1px 1px 0 #333;
+  width: 100%; }
+  .header a {
+    text-shadow: none; }
 
-#sidebar-wrapper.active {
-  left: 250px;
-  width: 250px; }
+.profile-pic {
+  border: 0.5em solid #99cd4e;
+  border-radius: 50%; }
 
 .sidebar-nav {
-  position: absolute;
-  top: 0;
-  width: 250px;
+  list-style: none;
   margin: 0;
   padding: 0;
-  list-style: none; }
+  position: absolute;
+  top: 0;
+  width: 250px; }
+  .sidebar-nav li {
+    line-height: 40px;
+    text-indent: 20px; }
+    .sidebar-nav li a {
+      color: #e1e1e1;
+      display: block;
+      font-family: sans-serif;
+      font-size: 1.2em;
+      font-weight: 500;
+      text-decoration: none; }
+      .sidebar-nav li a:hover {
+        color: #ffffff;
+        background: rgba(255, 255, 255, 0.2);
+        text-decoration: none; }
+      .sidebar-nav li a:active, .sidebar-nav li a:focus {
+        text-decoration: none; }
   .sidebar-nav .sidebar-brand {
     font-size: 18px;
-    line-height: 55px;
-    height: 55px; }
+    height: 55px;
+    line-height: 55px; }
     .sidebar-nav .sidebar-brand a {
       color: #999; }
       .sidebar-nav .sidebar-brand a:hover {
         color: #fff;
         background: none; }
-
-.sidebar-nav li {
-  line-height: 40px;
-  text-indent: 20px; }
-  .sidebar-nav li a {
-    font-family: "Roboto", sans-serif;
-    font-size: 1.2em;
-    font-weight: 500;
-    display: block;
-    text-decoration: none;
-    color: #999; }
-    .sidebar-nav li a:hover {
-      text-decoration: none;
-      color: #fff;
-      background: rgba(255, 255, 255, 0.2); }
-    .sidebar-nav li a:active, .sidebar-nav li a:focus {
-      text-decoration: none; }
-
-#menu-toggle {
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0.5em; }
-
-.toggle {
-  margin: 5px 5px 0 0; }
-
-/* Header */
-.header {
-  position: relative;
-  display: table;
-  width: 100%;
-  height: 100%;
-  color: #fff;
-  background: url("../imgs/space-jupiter.jpg");
-  background-color: #1d2123;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  text-shadow: -1px -1px 0 #333, 1px -1px 0 #333, -1px 1px 0 #333, 1px 1px 0 #333; }
 
 .text-vertical-center {
   display: table-cell;
@@ -154,102 +194,25 @@ hr.dark {
     font-size: 2em;
     font-weight: 700; }
 
-/* About */
-.about {
-  padding: 50px 0;
-  color: black;
-  background: #f7f7f7; }
+.toggle {
+  margin: 5px 5px 0 0; }
 
-.profile-pic {
-  border: 0.5em solid rgba(0, 0, 0, 0.4);
-  border-radius: 50%; }
-
-.about-me {
-  font-size: 1.75em;
-  max-width: 950px;
-  margin: 0.25em auto; }
-
-/* Skills */
-.skills {
-  font-size: 1.5em;
-  padding: 50px 0; }
-  .skills .skills-item {
-    margin: 30px 0; }
-    .skills .skills-item p {
-      font-family: "Roboto", sans-serif;
-      font-size: 1.25em;
-      font-weight: 500; }
-  .skills .skill-button {
-    margin: 0 0.35em; }
-
-/* Portfolio */
-.cool-stuff {
-  font-size: 1.25em;
-  color: black;
-  background-color: #f7f7f7; }
-  .cool-stuff .cool-stuff-item {
-    margin-bottom: 30px; }
-  .cool-stuff .img-cool-stuff {
-    -webkit-transition: all 0.4s ease;
-    -moz-transition: all 0.4s ease;
-    -ms-transition: all 0.4s ease;
-    -o-transition: all 0.4s ease;
-    transition: all 0.4s ease;
-    margin: 0 auto;
-    padding: 2px;
-    border: 4px solid transparent;
-    border-radius: 0.1em; }
-  .cool-stuff .img-cool-stuff:hover {
-    border-color: black; }
-
-/* Footer */
-footer {
-  padding: 75px 0 0;
-  background-color: #1d2123; }
-  footer a {
-    color: white; }
-    footer a:active, footer a:focus, footer a:hover {
-      text-decoration: none;
-      color: rgba(255, 255, 255, 0.5); }
-  footer a:active,
-  footer a:focus,
-  footer a:hover {
-    text-decoration: none;
-    color: rgba(255, 255, 255, 0.5); }
-  footer .form-control {
-    font-family: "Raleway", sans-serif;
-    font-size: 1.5em;
-    color: black;
-    border: 1px solid #111; }
-  footer label {
-    font-size: 1.5em; }
-  footer #reason-textarea,
-  footer input[type=email],
-  footer input[type=text] {
-    margin: 5px 1px 3px 0;
-    padding: 3px 0 3px 3px;
-    resize: vertical;
-    transition: border-color 0.30s ease-in-out;
-    border: 2px solid transparent;
-    outline: none !important; }
-    footer #reason-textarea:hover,
-    footer input[type=email]:hover,
-    footer input[type=text]:hover {
-      border: 2px solid #0187c1;
-      box-shadow: 0 0 5px #11b6fe; }
-    footer #reason-textarea:focus,
-    footer input[type=email]:focus,
-    footer input[type=text]:focus {
-      border: 2px solid #11b6fe;
-      box-shadw: 0 0 5px #11b6fe; }
-  footer #email:hover {
-    color: rgba(255, 255, 255, 0.5); }
-  footer .text-contact {
-    padding: 2em 0 0; }
-  footer .footer-copyright {
-    padding: 0 0 1em; }
+.work .work-item {
+  margin-bottom: 30px; }
+.work .img-work {
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  border: 4px solid transparent;
+  border-radius: 0.1em;
+  margin: 0 auto;
+  padding: 1px; }
+  .work .img-work:hover {
+    border-color: #99cd4e; }
 
 ::selection {
-  background-color: #11b6fe; }
+  background-color: #99cd4e; }
 
 /*# sourceMappingURL=style.css.map */
