@@ -4,9 +4,9 @@ html {
   height: 100%; }
 
 body {
-  font-family: sans-serif;
+  font-family: "Lato", sans-serif;
   color: #ffffff;
-  background-color: #343434; }
+  background-color: #1d2123; }
 
 a {
   -webkit-transition: all 0.3s ease-in-out;
@@ -14,15 +14,17 @@ a {
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  color: rgba(0, 0, 0, 0.7); }
+  color: #1d2123; }
   a:active, a:focus, a:hover {
-    color: black;
+    color: #99cd4e;
     text-decoration: none; }
 
 footer {
+  background-color: #e1e1e1;
+  color: #1d2123;
   padding: 50px 0 0; }
   footer a {
-    color: #ffffff; }
+    color: #1d2123; }
     footer a:active, footer a:focus, footer a:hover {
       color: #99cd4e;
       text-decoration: none; }
@@ -58,42 +60,19 @@ footer {
 
 hr {
   border-top: 1px solid #99cd4e; }
+  hr.light {
+    border-top: 1px solid #ffffff; }
   hr.small {
     width: 250px; }
 
 section {
   padding: 50px 0; }
   section:nth-child(odd) {
-    background-color: #ffffff;
-    color: #343434; }
-
-#menu-toggle {
-  left: 0.5em;
-  position: fixed;
-  top: 0;
-  z-index: 1; }
-
-#sidebar-wrapper {
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  -ms-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-  background: #222;
-  height: 100%;
-  left: 0;
-  margin-left: -250px;
-  overflow-y: auto;
-  position: fixed;
-  width: 250px;
-  z-index: 1000; }
-
-#sidebar-wrapper.active {
-  left: 250px;
-  width: 250px; }
+    background-color: #e1e1e1;
+    color: #1d2123; }
 
 .about-me {
-  font-size: 1.75em;
+  font-size: 22px;
   margin: 0.25em auto;
   max-width: 950px; }
 
@@ -109,7 +88,7 @@ section {
 
 .btn-dark {
   background-color: rgba(0, 0, 0, 0.4);
-  border: 1px solid #343434;
+  border: 1px solid #1d2123;
   border-radius: 0;
   color: #ffffff; }
   .btn-dark:active, .btn-dark:focus, .btn-dark:hover {
@@ -117,18 +96,14 @@ section {
     border-color: #e1e1e1;
     color: #ffffff; }
 
-.btn-menu {
-  background-color: #e1e1e1;
-  border: 1px solid #343434;
-  border-radius: 0;
-  color: #343434; }
-  .btn-menu:active, .btn-menu:focus, .btn-menu:hover {
-    border: 1px solid #e1e1e1; }
+.container.nav-padding {
+  padding-top: 5px;
+  padding-bottom: 5px; }
 
 .header {
   background: url("../imgs/space-jupiter.jpg");
   background-attachment: scroll;
-  background-color: #343434;
+  background-color: #1d2123;
   background-position: center;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
@@ -144,44 +119,40 @@ section {
   .header a {
     text-shadow: none; }
 
+.navbar-default {
+  background-color: #1d2123;
+  border-color: black;
+  font-size: 18px; }
+
+.navbar-brand {
+  font-size: 22px; }
+
+.navbar-default .navbar-nav > .active > a {
+  background-color: #1d2123 !important;
+  border-bottom: 2px solid #99cd4e; }
+
+.navbar-default,
+.navbar-brand,
+.navbar-nav > li > a {
+  color: #ffffff !important; }
+
+.navbar-nav > li > a {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  border-bottom: 2px solid transparent;
+  margin: 16px 6px 15px 6px;
+  outline: 0 !important;
+  padding: 0 5px;
+  padding-bottom: 5px; }
+  .navbar-nav > li > a:hover {
+    border-color: #99cd4e; }
+
 .profile-pic {
   border: 0.5em solid #99cd4e;
   border-radius: 50%; }
-
-.sidebar-nav {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  top: 0;
-  width: 250px; }
-  .sidebar-nav li {
-    line-height: 40px;
-    text-indent: 20px; }
-    .sidebar-nav li a {
-      color: #e1e1e1;
-      display: block;
-      font-family: sans-serif;
-      font-size: 1.2em;
-      font-weight: 500;
-      text-decoration: none; }
-      .sidebar-nav li a:hover {
-        color: #ffffff;
-        background: rgba(255, 255, 255, 0.2);
-        text-decoration: none; }
-      .sidebar-nav li a:active, .sidebar-nav li a:focus {
-        text-decoration: none; }
-    .sidebar-nav li i {
-      text-indent: 0; }
-  .sidebar-nav .sidebar-brand {
-    font-size: 18px;
-    height: 55px;
-    line-height: 55px; }
-    .sidebar-nav .sidebar-brand a {
-      color: #999; }
-      .sidebar-nav .sidebar-brand a:hover {
-        color: #fff;
-        background: none; }
 
 .text-vertical-center {
   display: table-cell;
@@ -199,6 +170,10 @@ section {
 .toggle {
   margin: 5px 5px 0 0; }
 
+.work a {
+  color: #e1e1e1; }
+  .work a:hover {
+    color: #99cd4e; }
 .work .work-item {
   margin-bottom: 30px; }
 .work .img-work {

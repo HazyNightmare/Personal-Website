@@ -7,13 +7,13 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Zachary Surgett: freelance web developer.">
-	<meta name="keywords" content="HTML, CSS, JavaScript, web development, web, developer, development, software, programming, programming portfolio, portfolio, making websites">
+	<meta name="keywords" content="HTML, HTML5, CSS, CSS3, JavaScript, jQuery, web development, front end development, front-end, Front End, web, wordpress, developer, blog, resume, looking, for, work, development, software, programming, web development portfolio, programming portfolio, bootstrap, github, portfolio, making websites">
 	<meta name="author" content="Zachary Surgett">
 
 	<meta name="google-site-verification" content="Mo7_hZUztdbvwL3Umz28h-EXGkjvrBaKBVVlDAiovf8" />
 
 	<title>Zach Surgett - Home</title>
-
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato|Roboto">
 	<!--Bootstrap Core CSS-->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<!--Font-Awesome link-->
@@ -50,47 +50,34 @@
 <body>
 
 	<!--NAVIGATION-->
-	<a href="#" id="menu-toggle" class="btn btn-dark btn-lg toggle">
-		<i class="fa fa-bars"></i>
-	</a>
-	<nav id="sidebar-wrapper">
-		<ul class="sidebar-nav">
-			<a href="" id="menu-close" class="btn btn-menu btn-lg pull-right toggle">
-				<i class="fa fa-times"></i>
-			</a>
-			<li class="sidebar-brand">
-				<a href="#top" onclick="$('#menu-close').click();">Zach Surgett</a>
-			</li>
-			<li>
-				<a href="#top" onclick="$('#menu-close').click();">Home</a>
-			</li>
-			<li>
-				<a href="#about" onclick="$('#menu-close').click();">About</a>
-			</li>
-			<li>
-				<a href="#work" onclick="$('#menu-close').click();">My Work</a>
-			</li>
-			<li>
-				<a href="http://www.zacharysurgett.com/blog/">Blog</a>
-			</li>
-			<li>
-				<a href="files/Zachary Surgett-Resume.pdf" target="_blank">Resume</a>
-			</li>
-			<li>
-				<a href="#contact" onclick="$('#menu-close').click();">Contact</a>
-			</li>
-			<hr>
-			<li>
-				<i class="fa fa-twitter fa-fw"></i> @ZachSurgett
-			</li>
-			<li>
-				<i class="fa fa-phone fa-fw"></i> (575) 635-9669
-			</li>
-			<li>
-				<i class="fa fa-envelope-o fa-fw"></i> ZSurgett@gmail.com
-			</li>
-		</ul>
-	</nav>
+	<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container nav-padding">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Zachary Surgett</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="#top">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="#about">About me</a></li>
+        <li><a href="#work">My work</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
 
 	<!--Header-->
 	<header id="top" class="header">
@@ -107,7 +94,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<h2>About Me</h2>
+					<h2>About me</h2>
 					<hr class="small">
 				</div>
 			</div>
@@ -150,7 +137,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-10 col-lg-offset-1 text-center">
-					<h2>Some of the Cool Stuff I've Made</h2>
+					<h2>Some of my work</h2>
 					<hr class="small">
 					<div class="row">
 						<div class="col-xs-6">
@@ -216,7 +203,7 @@
 		<div id="contact" class="container">
 
 			<div class="row">
-				<h2 class="text-center">Get in Contact</h2>
+				<h2 class="text-center">Get in contact</h2>
 				<hr class="small">
 				<h3 class="text-center">Need to contact me? Fill out this form for a fast reply! Or you can send me an email or contact me through one of the links below.</h3>
 				<br>
@@ -249,7 +236,8 @@
 					</h3>
 					<ul style="font-size: 1.15em;" class="list-unstyled">
 						<li>
-							<i class="fa fa-phone fa-fw"></i> (575) 635-9669
+							<i class="fa fa-twitter fa-fw"></i>
+							<a href="https://twitter.com/ZachSurgett" target="_blank">@ZachSurgett</a>
 						</li>
 						<li>
 							<i class="fa fa-envelope-o fa-fw"></i>
@@ -289,22 +277,6 @@
 	<script src="js/bootstrap.min.js"></script>
 	<!--Custom JS link-->
 	<script src="js/script.js"></script>
-
-
-	<!-- Custom Theme JavaScript -->
-	<script>
-		// Closes the sidebar menu
-		$("#menu-close").click(function(e) {
-			e.preventDefault();
-			$("#sidebar-wrapper").toggleClass("active");
-		});
-
-		// Opens the sidebar menu
-		$("#menu-toggle").click(function(e) {
-			e.preventDefault();
-			$("#sidebar-wrapper").toggleClass("active");
-		});
-	</script>
 
 </body>
 
