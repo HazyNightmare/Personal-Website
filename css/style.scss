@@ -64,7 +64,6 @@ footer {
 	.form-control {
 		color: black;
 		border: 1px solid #111;
-		font-family: sans-serif;
 		font-size: 1.5em;
 	}
 
@@ -99,6 +98,10 @@ hr {
 	&.small {
 		width: 250px;
 	}
+}
+
+h2 {
+	font-family: "Roboto", sans-serif;
 }
 
 section {
