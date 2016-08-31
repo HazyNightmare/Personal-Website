@@ -65,7 +65,11 @@ hr {
     width: 250px; }
 
 h2 {
-  font-family: "Roboto", sans-serif; }
+  font-family: "Roboto", sans-serif;
+  text-align: center; }
+
+p {
+  text-align: center; }
 
 section {
   padding: 50px 0; }
@@ -127,7 +131,8 @@ section {
   font-size: 18px; }
 
 .navbar-brand {
-  font-size: 22px; }
+  font-size: 22px;
+  padding: 20px 15px 0 15px; }
 
 .navbar-default .navbar-nav > .active > a {
   background-color: #1d2123 !important;
@@ -147,8 +152,7 @@ section {
   border-bottom: 2px solid transparent;
   margin: 16px 6px 15px 6px;
   outline: 0 !important;
-  padding: 0 5px;
-  padding-bottom: 5px; }
+  padding: 5px; }
   .navbar-nav > li > a:hover {
     border-color: #99cd4e; }
 
@@ -176,6 +180,8 @@ section {
   color: #e1e1e1; }
   .work a:hover {
     color: #99cd4e; }
+.work p {
+  font-size: 18px; }
 .work .work-item {
   margin-bottom: 30px; }
 .work .img-work {

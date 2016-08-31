@@ -102,6 +102,11 @@ hr {
 
 h2 {
 	font-family: "Roboto", sans-serif;
+	text-align: center;
+}
+
+p {
+	text-align: center;
 }
 
 section {
@@ -175,6 +180,7 @@ section {
 
 .navbar-brand {
 	font-size: 22px;
+	padding: 20px 15px 0 15px;
 }
 
 .navbar-default .navbar-nav>.active>a {
@@ -193,8 +199,7 @@ section {
 	border-bottom: 2px solid transparent;
   margin: 16px 6px 15px 6px;
 	outline: 0 !important;
-	padding: 0 5px;
-  padding-bottom: 5px;
+	padding: 5px;
 	&:hover {
 		border-color: $green;
 	}
@@ -233,6 +238,10 @@ section {
 		&:hover {
 			color: $green;
 		}
+	}
+
+	p {
+		font-size: 18px;
 	}
 
 	.work-item {
